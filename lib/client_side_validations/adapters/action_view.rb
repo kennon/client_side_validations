@@ -5,11 +5,10 @@ module DNCLabs
         module BaseMethods
           
           def self.included(base)
-            form_method = base.instance_method(:form_for)
             base.class_eval do
               attr_accessor :validate_options
               
-              define_method(:form_for) do |record_or_name_or_array, *args, &proc|
+              def form_for_with_validate_options(record_or_name_or_array, *args, &proc)
                 options = Hash.new { |h, k| h[k] = {}}
                 options.merge!(args.extract_options!.symbolize_keys!)
                 script = ""
@@ -19,7 +18,7 @@ module DNCLabs
                   script = %{<script type='text/javascript'>var #{options[:html]['data-csv']}_validate_options=#{validate_options.to_json};</script>}
                 end
                 args << {}.merge(options)
-                result = form_method.bind(self).call(record_or_name_or_array, *args, &proc)
+                result = form_for_without_validate_options(record_or_name_or_array, *args, &proc)
                 
                 if rails3?
                   result += script.html_safe
@@ -28,6 +27,8 @@ module DNCLabs
                 end
                 result
               end
+
+              alias_method_chain :form_for, :validate_options
             end
           end
           
