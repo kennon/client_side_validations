@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Brian Cardarella"]
-  s.date = %q{2010-08-30}
+  s.date = %q{2010-08-31}
   s.description = %q{Client Side Validations for Rails 2.x and 3.x}
   s.email = %q{bcardarella@gmail.com}
   s.extra_rdoc_files = [
@@ -45,7 +45,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<validation_reflection-active_model>, ["= 0.2.0"])
       s.add_runtime_dependency(%q<json>, ["= 1.4.3"])
       s.add_development_dependency(%q<jspec>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, ["= 2.0.0.beta.19"])
       s.add_development_dependency(%q<actionpack>, ["= 3.0.0"])
       s.add_development_dependency(%q<activerecord>, ["= 3.0.0"])
       s.add_development_dependency(%q<bson_ext>, ["= 1.0.4"])
@@ -53,11 +53,12 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<crack>, [">= 0"])
       s.add_development_dependency(%q<bourne>, [">= 0"])
       s.add_development_dependency(%q<rack-test>, [">= 0"])
+      s.add_development_dependency(%q<ruby-debug>, [">= 0"])
     else
       s.add_dependency(%q<validation_reflection-active_model>, ["= 0.2.0"])
       s.add_dependency(%q<json>, ["= 1.4.3"])
       s.add_dependency(%q<jspec>, [">= 0"])
-      s.add_dependency(%q<rspec>, [">= 0"])
+      s.add_dependency(%q<rspec>, ["= 2.0.0.beta.19"])
       s.add_dependency(%q<actionpack>, ["= 3.0.0"])
       s.add_dependency(%q<activerecord>, ["= 3.0.0"])
       s.add_dependency(%q<bson_ext>, ["= 1.0.4"])
@@ -65,12 +66,13 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<crack>, [">= 0"])
       s.add_dependency(%q<bourne>, [">= 0"])
       s.add_dependency(%q<rack-test>, [">= 0"])
+      s.add_dependency(%q<ruby-debug>, [">= 0"])
     end
   else
     s.add_dependency(%q<validation_reflection-active_model>, ["= 0.2.0"])
     s.add_dependency(%q<json>, ["= 1.4.3"])
     s.add_dependency(%q<jspec>, [">= 0"])
-    s.add_dependency(%q<rspec>, [">= 0"])
+    s.add_dependency(%q<rspec>, ["= 2.0.0.beta.19"])
     s.add_dependency(%q<actionpack>, ["= 3.0.0"])
     s.add_dependency(%q<activerecord>, ["= 3.0.0"])
     s.add_dependency(%q<bson_ext>, ["= 1.0.4"])
@@ -78,6 +80,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<crack>, [">= 0"])
     s.add_dependency(%q<bourne>, [">= 0"])
     s.add_dependency(%q<rack-test>, [">= 0"])
+    s.add_dependency(%q<ruby-debug>, [">= 0"])
   end
 end
 

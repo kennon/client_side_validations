@@ -16,7 +16,7 @@ begin
     gem.test_files  = []
     
     gem.add_development_dependency 'jspec'
-    gem.add_development_dependency 'rspec'
+    gem.add_development_dependency 'rspec', '2.0.0.beta.19'
     gem.add_development_dependency 'actionpack', '3.0.0'
     gem.add_development_dependency 'activerecord', '3.0.0'
     gem.add_development_dependency 'bson_ext', '1.0.4'
@@ -24,6 +24,7 @@ begin
     gem.add_development_dependency 'crack'
     gem.add_development_dependency 'bourne'
     gem.add_development_dependency 'rack-test'
+    gem.add_development_dependency 'ruby-debug'
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
@@ -35,25 +36,25 @@ task :rspec do
   system('rake orm')
 
   puts 'ActionView 2.x'
-  system('spec spec/action_view_2_spec.rb')
+  system('bundle exec rspec spec/action_view_2_spec.rb')
 
   puts 'ActionView 3.x'
-  system('spec spec/action_view_3_spec.rb')
+  system('bundle exec rspec spec/action_view_3_spec.rb')
   
   puts 'Middleware'
-  system('spec spec/middleware_spec.rb')
+  system('bundle exec rspec spec/middleware_spec.rb')
   
   puts 'Options'
-  system('spec spec/options_spec.rb')
+  system('bundle exec rspec spec/options_spec.rb')
 end
 
 desc 'ORM Specs'
 task :orm do
   puts 'ActiveRecord 2.x'
-  system('spec spec/active_record_2_spec.rb')
+  system('bundle exec rspec spec/active_record_2_spec.rb')
   
   puts 'ActiveModel 3.x'
-  system('spec spec/active_model_3_spec.rb')
+  system('bundle exec rspec spec/active_model_3_spec.rb')
 end
 
 desc 'Default: the full test suite.'

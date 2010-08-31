@@ -29,6 +29,6 @@ module AbstractARModel
   
 end
 
-Spec::Runner.configure do |config|
+RSpec.configure do |config|
   config.include(AbstractARModel)
 end
