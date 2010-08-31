@@ -214,7 +214,7 @@ shared_examples_for 'ActiveModel' do
       end
     end
 
-    xit "should support the regular validate method" do
+    it "should support the regular validate method" do
       Klass.class_eval do
         validate :do_something
     
